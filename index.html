@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Acme Product Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet" />
+    <link href="app/app.component.css" rel="stylesheet" />
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    
+    <!-- 2. Materialize JS -->
+    <!--<script src="node_modules/materialize-css/node_modules/jquery/dist"></script>-->
+    <!--<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>-->
+
+    <!-- 3. Configure SystemJS -->
+    <script>
+        System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+    <!-- 4. Initialize Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyBqS-TBJ0NysI0YguFhlWe8rDWXCLCuHWw",
+        authDomain: "fazalbetadb.firebaseapp.com",
+        databaseURL: "https://fazalbetadb.firebaseio.com",
+        storageBucket: "fazalbetadb.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <app>Loading...</app>
+</body>
+
+</html>
